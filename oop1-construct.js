@@ -237,16 +237,14 @@ instantiating the class.
 */
 
 class Earth {
-    static name = 'earth'
-    static planetNum = 3 //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
-
-    static showEarth() {
-        console.log(this)
-    }
+    static name = 'earth';
+    static planetNum = 3; //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
 
 }
 
-Earth.showEarth();
+console.log(Earth.name);
+console.log(Earth.planetNum);
+
 
 
 
