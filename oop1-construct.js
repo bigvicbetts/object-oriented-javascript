@@ -237,13 +237,8 @@ instantiating the class.
 */
 
 class Earth {
-    name;
-    planetNum; //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
-
-    constructor(name,num) {
-        this.name = 'earth';
-        this.planetNum = 3;
-    }
+    static name = 'earth'
+    static planetNum = 3 //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
 
     static showEarth() {
         console.log(this)
