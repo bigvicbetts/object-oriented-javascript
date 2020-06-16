@@ -17,7 +17,7 @@ class WhyClass {
     }
 
     pieces() {
-        return 'The various parts that are essential to building a class are the constructor as well as the attributes and methods created by the class and passed to the instances.';
+        return 'The parts that are essential to building a class are the constructor as well as the attributes and methods created by the class and passed to the instances.';
     }
 }
 
@@ -241,15 +241,17 @@ class Earth {
     planetNum; //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
 
     constructor(name,num) {
-        this.name = name;
-        this.planetNum = num;
+        this.name = 'earth';
+        this.planetNum = 3;
+    }
+
+    static showEarth() {
+        console.log(this)
     }
 
 }
 
-const earth = new Earth('earth',3);
-console.log(earth);
-
+Earth.showEarth();
 
 
 
