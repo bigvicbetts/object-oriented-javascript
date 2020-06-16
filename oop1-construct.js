@@ -59,7 +59,7 @@ class AmazonAnimal {
     sayHi() {
         return `I say "hello" with a ${this.language}.`
     }
-    
+
 }
 
 const amazonRiverDolphin = new AmazonAnimal('Amazon River Dolphin', 'mammal', 'pale pink', ['small fish', 'crabs', 'turtles'], 'swim', 'whistle');
@@ -68,6 +68,7 @@ const jaguar = new AmazonAnimal('Jaguar', 'mammal', 'spotted', ['fish', 'turtles
 const hyacinthMacaw = new AmazonAnimal('Hyacinth Macaw', 'bird', 'blue', ['fruit', 'nuts'], 'fly', 'screech');
 const kingVulture = new AmazonAnimal('King Vulture', 'bird', 'white', ['dead animals'], 'fly', 'grunt');
 const greenAnaconda = new AmazonAnimal('Green Anaconda', 'reptile', 'green', ['wild pigs', 'deer', 'birds', 'turtles', 'capybara', 'caimans', 'jaguars'], 'slither', 'hiss')
+
 console.log(amazonRiverDolphin.eat());
 console.log(capybara.sayHi());
 console.log(jaguar.getAround());
@@ -101,6 +102,18 @@ class Shape {
             this.height = Math.sqrt(Math.pow(this.sides[1], 2) - Math.pow((this.base / 2), 2))
             console.log(`${this.name}'s area is calculated to be : ${.5 * this.base * this.height}`);
         }
+        else if (this.sides.length === 5) {
+            const side = this.sides[0];
+            console.log(`${this.name}'s area is calculated to be : ${.25 * Math.sqrt(5 * (5 + (2 * Math.sqrt(5)))) * Math.pow(side, 2)}`);
+        }
+        else if (this.sides.length === 6) {
+            const side = this.sides[0];
+            console.log(`${this.name}'s area is calculated to be : ${((3 * Math.sqrt(3)) / 2) * Math.pow(side, 2)}`)
+        }
+        else if (this.sides.length === 8) {
+            const side = this.sides[0];
+            console.log(`${this.name}'s area is calculated to be : ${2 * (1 + Math.sqrt(2)) * Math.pow(side, 2)}`)
+        }
         else if (this.radius === null) { // Else if it is not a circle (so has no radius), apply the rectangle area formula
             console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);
         }
@@ -114,6 +127,9 @@ class Shape {
         if (this.sides.length === 3) { //If the sides parameter has a length of 3, apply the triangle perimeter formula
             this.base = this.sides[0]
             console.log(`${this.name}'s perimeter is calculated to be : ${(this.base) + (this.sides[1] + this.sides[2]) }`)
+        }
+        else if (this.sides.length > 3) {
+            console.log(`${this.name}'s perimeter is calculated to be : ${this.sides[0] * this.sides.length}`)
         }
         else if (this.radius === null) { // Else if it is not a circle (so has no radius), apply the rectangle perimeter formula
             console.log(`${this.name}'s perimeter is calculated to be : ${(2 * this.length) + (2 * this.width) }`)
@@ -135,6 +151,18 @@ newRectangle.calcPerimeter();
 const newCircle = new Shape('circle', 1, null, null, 5)
 newCircle.calcArea();
 newCircle.calcPerimeter();
+
+const pentagon = new Shape('pentagon', [5, 5, 5, 5, 5], null, null, null);
+pentagon.calcArea();
+pentagon.calcPerimeter();
+
+const hexagon = new Shape('hexagon', [5, 5, 5, 5, 5, 5], null, null, null);
+hexagon.calcArea();
+hexagon.calcPerimeter();
+
+const octagon = new Shape('octagon', [5, 5, 5, 5, 5, 5, 5, 5], null, null, null);
+octagon.calcArea();
+octagon.calcPerimeter();
 //  End of student code
 
 
